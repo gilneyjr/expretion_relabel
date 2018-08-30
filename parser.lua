@@ -50,16 +50,6 @@ local g = re.compile([[
 	"AttErr			<- ('' -> 'AttErr' => save_err) " .. rec('exp / att') .. '\n'
 , def)
 
-function printAST(ast)
-	if ast then
-		if type(ast) == 'table' then
-			print(table.concat(ast,','))
-		end
-	else
-		print 'AST inválida'
-	end
-end
-
 local Parser = {}
 
 function Parser.parse(str)
